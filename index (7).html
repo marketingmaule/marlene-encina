@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marlene Encina - Tarjeta Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f172a;--slate:#1e293b;--muted:#64748b;--line:#e2e8f0;--soft:#f1f5f9;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+body{background:#eef1f5;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:16px;color:var(--slate);}
+.card{width:100%;max-width:420px;background:#fff;border-radius:28px;padding:24px 24px 20px;box-shadow:0 12px 32px rgba(15,23,42,.10);}
+.topbar{display:flex;height:5px;border-radius:99px;overflow:hidden;margin-bottom:14px;}
+.topbar span{flex:1;}
+.topbar span:nth-child(1){background:#111111;}
+.topbar span:nth-child(2){background:#4b5563;}
+.topbar span:nth-child(3){background:#cbd5e1;}
+.info-box{border:1px solid var(--line);border-radius:20px;padding:18px 20px 16px;margin-bottom:12px;}
+.head{display:flex;justify-content:flex-end;align-items:center;min-height:48px;margin-bottom:10px;}
+.head img{max-height:64px;max-width:170px;object-fit:contain;}
+.head .emoji{font-size:2.6rem;line-height:1;}
+h1{font-size:1.65rem;line-height:1.15;font-weight:800;color:var(--ink);margin-bottom:6px;}
+.cargo{font-size:1.05rem;font-weight:600;color:var(--slate);}
+.empresa{font-size:.95rem;font-weight:500;color:#475569;margin-top:2px;}
+.titulo{font-size:.95rem;color:var(--muted);margin-top:2px;}
+.divider{height:1px;background:var(--line);margin:14px 0 12px;}
+.lista{display:flex;flex-direction:column;gap:11px;}
+.item{display:flex;align-items:flex-start;gap:12px;font-size:1rem;font-weight:500;color:var(--slate);text-decoration:none;word-break:break-word;}
+.item .ico{width:22px;text-align:center;flex-shrink:0;}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px 12px;border-radius:14px;border:1px solid transparent;font-size:1.05rem;font-weight:700;text-decoration:none;cursor:pointer;margin-bottom:10px;}
+.btn-dark{background:#1e293b;color:#fff;}
+.btn-wa{background:#25d366;color:#fff;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.grid .btn{margin-bottom:0;padding:13px 8px;font-size:.95rem;font-weight:600;background:var(--soft);border-color:var(--line);color:var(--slate);}
+.grid .btn:last-child:nth-child(odd){grid-column:span 2;}
+.btn-pay{background:#fff;border:2px solid #1e293b;color:#1e293b;}
+.pay-panel{display:none;border:1px solid var(--line);border-radius:16px;padding:4px 14px 14px;margin-bottom:10px;background:#fafbfc;}
+.pay-panel.abierto{display:block;}
+.pay-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);}
+.pay-label{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.pay-value{font-size:1rem;font-weight:600;color:var(--ink);word-break:break-word;}
+.copy{flex-shrink:0;border:1px solid #cbd5e1;background:#fff;color:#1e293b;font-weight:600;font-size:.85rem;padding:8px 12px;border-radius:10px;cursor:pointer;}
+.pay-panel .copy-all{margin:12px 0 0;padding:12px;font-size:.95rem;}
+.ok{background:#dcfce7 !important;color:#166534 !important;border-color:#86efac !important;}
+.qr-sec{border-top:1px solid var(--line);margin-top:6px;padding-top:14px;text-align:center;}
+.qr-title{font-size:.78rem;font-weight:700;letter-spacing:.12em;color:#64748b;margin-bottom:10px;}
+.qr-box{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;}
+#qrcode img,#qrcode canvas{display:block;}
+.foot{text-align:center;font-size:.8rem;color:#94a3b8;margin-top:12px;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="topbar"><span></span><span></span><span></span></div>
+    <div class="info-box">
+      <div class="head"><span class="emoji">🐥</span></div>
+      <h1>Marlene Encina</h1>
+      <div class="cargo">Productora</div>
+      <div class="empresa">Lombrices californianas</div>
+      
+      <div class="divider"></div>
+      <div class="lista">
+        <a class="item" href="tel:+56995797206"><span class="ico">📞</span><span>+56 9 9579 7206</span></a>
+        <a class="item" href="mailto:marlenencina@hotmail.com"><span class="ico">✉️</span><span>marlenencina@hotmail.com</span></a>
+        <div class="item"><span class="ico">📍</span><span>Talca, Chile</span></div>
+      </div>
+    </div>
+    <a class="btn btn-dark" href="contacto.vcf" download>📇 Guardar en Contactos</a>
+    <a class="btn btn-wa" href="https://wa.me/56995797206" target="_blank" rel="noopener">💬 Mensaje por WhatsApp</a>
+    <div class="grid">
+      <a class="btn" href="mailto:marlenencina@hotmail.com">✉️ Correo</a>
+      <a class="btn" href="Https://www.facebook.com/marlene" target="_blank" rel="noopener">🔗 Facebook</a>
+      <a class="btn" href="tel:+56995797206">📞 Llamar</a>
+    </div>
+        <button type="button" class="btn btn-pay" id="btnPago" aria-expanded="false" aria-controls="panelPago">💳 Datos de transferencia</button>
+        <div class="pay-panel" id="panelPago">
+          <div class="pay-row"><div><div class="pay-label">Nombre del titular</div><div class="pay-value">Marlene Encina</div></div><button type="button" class="copy" data-copy="Marlene Encina">Copiar</button></div>
+          <div class="pay-row"><div><div class="pay-label">RUT</div><div class="pay-value">10062129-0</div></div><button type="button" class="copy" data-copy="10062129-0">Copiar</button></div>
+          <div class="pay-row"><div><div class="pay-label">Banco</div><div class="pay-value">Banco estado</div></div><button type="button" class="copy" data-copy="Banco estado">Copiar</button></div>
+          <div class="pay-row"><div><div class="pay-label">Tipo de cuenta</div><div class="pay-value">Cuenta Vista</div></div><button type="button" class="copy" data-copy="Cuenta Vista">Copiar</button></div>
+          <div class="pay-row"><div><div class="pay-label">N° de cuenta</div><div class="pay-value">10062129</div></div><button type="button" class="copy" data-copy="10062129">Copiar</button></div>
+          <div class="pay-row"><div><div class="pay-label">Correo para comprobante</div><div class="pay-value">marlenencina@hotmail.com</div></div><button type="button" class="copy" data-copy="marlenencina@hotmail.com">Copiar</button></div>
+          <button type="button" class="btn btn-dark copy-all" data-copy="Nombre del titular: Marlene Encina&#10;RUT: 10062129-0&#10;Banco: Banco estado&#10;Tipo de cuenta: Cuenta Vista&#10;N° de cuenta: 10062129&#10;Correo para comprobante: marlenencina@hotmail.com">Copiar todos los datos</button>
+        </div>
+    <div class="qr-sec" id="qrSec">
+      <div class="qr-title">ESCANEAR PARA COMPARTIR</div>
+      <div class="qr-box"><div id="qrcode"></div></div>
+    </div>
+    <div class="foot">© Contacto Marlene Encina</div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function () {
+  function fallback(texto, ok) {
+    var t = document.createElement('textarea');
+    t.value = texto;
+    t.setAttribute('readonly', '');
+    t.style.position = 'fixed';
+    t.style.opacity = '0';
+    document.body.appendChild(t);
+    t.select();
+    t.setSelectionRange(0, 99999);
+    try { document.execCommand('copy'); ok(); } catch (e) { window.prompt('Copia los datos:', texto); }
+    document.body.removeChild(t);
+  }
+  function copiar(texto, btn) {
+    var original = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', original);
+    var ok = function () {
+      btn.textContent = '✓ Copiado';
+      btn.classList.add('ok');
+      setTimeout(function () { btn.textContent = original; btn.classList.remove('ok'); }, 1600);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(texto).then(ok, function () { fallback(texto, ok); });
+    } else {
+      fallback(texto, ok);
+    }
+  }
+  var botones = document.querySelectorAll('[data-copy]');
+  for (var i = 0; i < botones.length; i++) {
+    botones[i].addEventListener('click', function () { copiar(this.getAttribute('data-copy'), this); });
+  }
+  var bp = document.getElementById('btnPago');
+  var pp = document.getElementById('panelPago');
+  if (bp && pp) {
+    bp.addEventListener('click', function () {
+      var abierto = pp.classList.toggle('abierto');
+      bp.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    });
+  }
+  var qr = document.getElementById('qrcode');
+  if (qr) {
+    try {
+      var url = location.href.split('#')[0].split('?')[0];
+      new QRCode(qr, { text: url, width: 150, height: 150, correctLevel: QRCode.CorrectLevel.M });
+    } catch (e) {
+      var sec = document.getElementById('qrSec');
+      if (sec) sec.style.display = 'none';
+    }
+  }
+})();
+</script>
+</body>
+</html>
